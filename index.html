@@ -12,6 +12,9 @@
     />
     <link rel="stylesheet" href="https://use.typekit.net/omq2gnq.css" />
     <link rel="stylesheet" href="styles/olga.css" />
+    <link rel="stylesheet" href="scripts/magnific-popup.css" />
+    <script src="scripts/zepto.min.js"></script>
+    <script src="scripts/jquery.magnific-popup.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.2.0/dist/simpleParallax.min.js"></script>
     <script
       src="https://kit.fontawesome.com/480ef61223.js"
@@ -53,8 +56,8 @@
     </main>
 
     <section class="home-images grid">
-      <img src="images/584A5703.jpg" alt="" />
-      <img src="images/53-IMG_7074.JPG" alt="" />
+      <img src="images/584A5703.jpg" alt="" class="scroll-down" />
+      <img src="images/53-IMG_7074.JPG" alt="" class="scroll-down2" />
     </section>
     <section class="home-about grid">
       <div class="copy">
@@ -74,10 +77,14 @@
       <figure>
         <img class="showreel-bg" src="images/DSC_9020.jpg" alt="" />
       </figure>
-      <div>
-        <h2>Showreel</h2>
-        <img class="player-btn" src="images/player-btn.svg" alt="" />
-      </div>
+      <a
+        class="popup-youtube"
+        href="http://www.youtube.com/watch?v=0O2aH4XLbto"
+      >
+        <div>
+          <h2>Showreel</h2>
+          <img class="player-btn" src="images/player-btn.svg" alt="" /></div
+      ></a>
     </section>
 
     <footer>
@@ -95,6 +102,50 @@
         ></a>
       </p>
     </footer>
+
+    <style type="text/css">
+      /**
+       * Simple fade transition,
+       */
+      .mfp-fade.mfp-bg {
+        opacity: 0;
+        -webkit-transition: all 0.15s ease-out;
+        -moz-transition: all 0.15s ease-out;
+        transition: all 0.15s ease-out;
+      }
+      .mfp-fade.mfp-bg.mfp-ready {
+        opacity: 0.8;
+      }
+      .mfp-fade.mfp-bg.mfp-removing {
+        opacity: 0;
+      }
+
+      .mfp-fade.mfp-wrap .mfp-content {
+        opacity: 0;
+        -webkit-transition: all 0.15s ease-out;
+        -moz-transition: all 0.15s ease-out;
+        transition: all 0.15s ease-out;
+      }
+      .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+        opacity: 1;
+      }
+      .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+        opacity: 0;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".popup-youtube").magnificPopup({
+          disableOn: 700,
+          type: "iframe",
+          mainClass: "mfp-fade",
+          removalDelay: 160,
+          preloader: false,
+
+          fixedContentPos: false,
+        });
+      });
+    </script>
 
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/image-parallax.js"></script>

@@ -14,9 +14,9 @@
   box-sizing: border-box;
 }
 
-/* body {
+body {
   background-color: var(--white);
-} */
+}
 
 html {
   font-size: calc(7px + 2.5 * (100vw - 500px) / 700);
@@ -179,6 +179,14 @@ main.hero > span {
   position: absolute;
   top: 50%;
 }
+a.popup-youtube {
+  cursor: pointer;
+
+  line-height: 26px;
+
+  text-decoration: none;
+  border-bottom: 1px dotted;
+}
 
 span.olga,
 span.rossa {
@@ -292,10 +300,15 @@ section.showreel div > * {
   align-content: center;
   justify-content: center;
 }
+
 .player-btn {
   height: 10rem;
   width: unset;
   object-fit: fill;
+}
+
+.showreel h2 {
+  display: unset;
 }
 
 section.showreel .showreel-bg {
