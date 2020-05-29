@@ -18,3 +18,11 @@ hamburgerBtn.addEventListener("click", function () {
     element.classList.toggle("nav-btn-active");
   });
 });
+
+const nav = document.querySelector("nav");
+const navElements = nav.children;
+//Zmiana koloru na scroll
+window.onscroll = () => {
+  if (window.pageYOffset > 0) nav.classList.add("scroll");
+  else nav.classList.remove("scroll");
+};

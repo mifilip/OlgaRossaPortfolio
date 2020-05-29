@@ -32,7 +32,7 @@ h2,
 h3,
 h4 {
   font-weight: 400;
-  font-family: didot;
+  font-family: linotype-didot, didot, serif;
   font-style: italic;
   word-wrap: break-word;
   hyphens: auto;
@@ -80,12 +80,29 @@ header {
   position: absolute;
   width: calc(100vw - (100vw - 100%));
   z-index: 3;
+  position: fixed;
 }
 
 nav {
   height: 12rem;
   padding: 1rem 5rem;
   display: flex;
+  color: var(--white);
+  transition: 0.35s all var(--easeOut);
+}
+
+nav.scroll {
+  background-color: var(--white);
+  height: 6rem;
+  color: var(--black);
+  transition: 0.7s all var(--easeOut);
+}
+
+nav.scroll ul a::after {
+  background: var(--black);
+}
+nav.scroll button span > * {
+  background: red;
 }
 
 nav > * {
@@ -114,26 +131,73 @@ h4 {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 120%;
-  color: var(--black);
   letter-spacing: 0.1rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 nav h4 {
   font-size: 3rem;
+  font-weight: 400;
 }
 
 ul.menu > * {
   margin-left: 2rem;
 }
 
+/* nav hover */
+nav ul a::after {
+  cursor: pointer;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0.1rem;
+  background: var(--black);
+  content: "";
+  opacity: 0;
+  transition: height 0.3s, opacity 0.3s, transform 0.3s;
+  transform: translateY(-0.5rem);
+}
+
+nav ul a:hover::after,
+nav ul a:focus::after {
+  cursor: pointer;
+  height: 0.2rem;
+  opacity: 1;
+  transform: translateY(0.5rem);
+}
+
 main.hero {
   padding: 0 5rem;
   height: 100vh;
+  background: url("../images/cover.jpg") 50% 35% no-repeat;
+  overflow: hidden;
 }
 
 main.hero > span {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+}
+
+span.olga,
+span.rossa {
+  color: var(--white);
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+}
+
+span.olga {
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+span.rossa {
+  left: 70%;
+  transform: translate(-50%, -50%);
 }
 
 footer {
@@ -141,11 +205,17 @@ footer {
   align-items: center;
   margin: 10rem 0rem 1rem;
   justify-items: center;
+  padding: 0rem 5rem 5rem 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+footer p {
+  display: inline-block;
 }
 
 footer p * {
   text-decoration: none;
-  color: var(--black);
+  color: var(--grey);
 }
 
 footer i {
@@ -153,7 +223,7 @@ footer i {
   padding: 0 0 0 2rem;
 }
 footer i:hover {
-  color: var(--white);
+  color: var(--black);
   transition: 250ms;
 }
 
@@ -186,6 +256,9 @@ footer > p {
   nav .active {
     display: block;
   }
+  nav.scroll {
+    height: 8rem;
+  }
 
   #hamburger {
     padding: 3rem;
@@ -195,11 +268,8 @@ footer > p {
     transition-timing-function: linear;
     overflow: visible;
     background-color: transparent;
-    margin-right: -3rem;
     border: 0;
-    position: absolute;
-    right: 4rem;
-    top: 1rem;
+    right: 2rem;
     display: block;
   }
 
