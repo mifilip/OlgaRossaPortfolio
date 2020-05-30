@@ -63,6 +63,11 @@ h3 {
   color: var(--white);
   text-transform: uppercase;
   margin-bottom: 1rem;
+  letter-spacing: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 p {
@@ -168,17 +173,6 @@ nav ul a:focus::after {
   transform: translateY(0.5rem);
 }
 
-main.hero {
-  padding: 0 5rem;
-  height: 100vh;
-  background: url("../images/cover.jpg") 50% 35% no-repeat;
-  overflow: hidden;
-}
-
-main.hero > span {
-  position: absolute;
-  top: 50%;
-}
 a.popup-youtube {
   cursor: pointer;
 
@@ -187,23 +181,74 @@ a.popup-youtube {
   text-decoration: none;
   border-bottom: 1px dotted;
 }
+main.hero {
+  padding: 0 1rem;
+  height: 100vh;
+  background: url("../images/cover.jpg") 50% 35% no-repeat;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-span.olga,
-span.rossa {
+main.hero .intro span {
   color: var(--white);
-  left: 0;
-  position: absolute;
-  text-align: center;
-  top: 50%;
+  top: 0%;
+  overflow: hidden;
+  height: max-content;
+  display: inline-block;
+  width: min-content;
+  padding: 2rem calc(7rem + 2.5 * (100vw - 90rem) / 20);
 }
 
-span.olga {
-  left: 28%;
-  transform: translate(-50%, -50%);
+main.hero .intro span.olga {
+  padding-left: 0;
 }
-span.rossa {
-  left: 72%;
-  transform: translate(-50%, -50%);
+main.hero .intro span.rossa {
+  padding-right: 0;
+}
+
+main.hero .intro {
+  width: max-content;
+  position: relative;
+  height: max-content;
+}
+
+main.hero .intro h1 {
+  animation: slide-in 3s forwards var(--easeOut);
+  position: relative;
+  transform: translateY(-200%);
+  display: block;
+  white-space: nowrap;
+}
+
+span.blockreveal {
+  overflow: hidden;
+  height: max-content;
+  width: min-content;
+}
+.revealed {
+  animation: slide-in 3s forwards var(--easeOut);
+  position: relative;
+  transform: translateY(-200%);
+  display: block;
+  white-space: nowrap;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(140%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+main.hero .intro .olga h1 {
+  animation-delay: 0.5s;
+}
+main.hero .intro .rossa h1 {
+  animation-delay: 1s;
 }
 
 footer {
@@ -318,6 +363,35 @@ section.showreel .showreel-bg {
 section.showreel .showreel-bg:hover {
   transform: scale(1.02);
   transition: 0.7s all var(--easeOut);
+}
+
+.get-in-touch a {
+  color: inherit;
+  transition: 0.3s all var(--easeInOut);
+}
+.get-in-touch a:hover {
+  color: var(--accent);
+  transition: 0.2s all var(--easeInOut);
+}
+
+.get-in-touch figure {
+  grid-column: 1/5;
+  grid-row: 1;
+}
+
+.get-in-touch .details {
+  grid-column: 6/12;
+  grid-row: 1;
+}
+span.getin h2:nth-of-type(2) {
+  margin: -7rem 0 0px 8rem;
+  color: var(--accent);
+}
+.get-in-touch .details h3 {
+  margin: 4rem 0rem 0rem 8rem;
+}
+.get-in-touch .details p {
+  margin: 2rem 0rem 0rem 8rem;
 }
 
 @media only screen and (max-width: 599px) {
@@ -442,5 +516,9 @@ section.showreel .showreel-bg:hover {
 
   section.showreel div {
     transform: translate(-50%, -50%);
+  }
+
+  .details {
+    margin: 10rem 4rem;
   }
 }

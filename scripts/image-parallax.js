@@ -33,7 +33,7 @@ new simpleParallax(image4, {
 
 //AOS
 AOS.init({
-  duration: 1000,
+  duration: 500,
   offset: -50,
   once: true,
 });
