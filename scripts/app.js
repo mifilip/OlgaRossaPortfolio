@@ -61,3 +61,8 @@ var domReady = function (callback) {
 //     headings.classList.add("revealed");
 //   } else 0;
 // };
+
+const header = document.querySelector("header");
+window.onload = function () {
+  header.className += " loaded";
+};
