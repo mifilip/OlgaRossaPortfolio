@@ -280,11 +280,11 @@ main.hero .intro .rossa h1 {
 footer {
   width: calc(100vw - (100vw - 100%));
   align-items: center;
-  margin: 10rem 0rem 1rem;
   justify-items: center;
-  padding: 0rem 5rem 5rem 5rem;
+  padding: 10rem 5rem 5rem 5rem;
   display: flex;
   justify-content: space-between;
+  background-color: var(--black);
 }
 footer p {
   display: inline-block;
