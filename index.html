@@ -21,17 +21,22 @@
     ></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="styles/olga.css" />
     <title>Olga Rossa | Actress, Singer, Storyteller, Model</title>
   </head>
 
-  <body class="darkmode">
+  <body class="darkmode" data-barba="wrapper">
+    <div class="load-container">
+      <div class="loading-screen"></div>
+    </div>
+
     <header>
       <nav>
         <ul class="lang-switch">
           <a href="index.html">ENG/PL</a>
         </ul>
-        <h4 class="logo">Olga Rossa</h4>
+        <a href="index.html"><h4 class="logo">Olga Rossa</h4></a>
         <ul class="menu">
           <a href="portfolio.html">Portfolio</a>
           <a href="gallery.html">Gallery</a>
@@ -46,7 +51,7 @@
       </nav>
     </header>
 
-    <main class="hero">
+    <main class="hero" data-barba="container" data-barba-namespace="home">
       <div class="intro">
         <span class="olga">
           <h1 class="block-reveal">Olga</h1>
@@ -94,16 +99,18 @@
             data-aos-duration="3000"
             data-aos-delay="500"
           >
-            About
+            About me
           </h2>
         </span>
-        <p data-aos="reveal-up" data-aos-duration="3000" data-aos-delay="300">
-          Olga Rossa is an independent actress, model and singer. Grew up in
-          Aleksandrow, near Bilgoraj in Poland, began acting at the age of 6 by
-          winning a recitation contest. Proud proprietress of natural gold hair
-          and a huge passion, that led her to England. Enormous fan of
-          historical dramas.
-        </p>
+        <span class="blockreveal">
+          <p data-aos="reveal-up" data-aos-duration="3000" data-aos-delay="300">
+            I was six when I firstly performed in front of an unknown audience.
+            I still remember the lyrics, I was talking about some nightmare’s
+            monster, but I did not frighten people. Instead, I made them laugh
+            and myself - pleased. Is that how this whole acting thing begins? In
+            my case, apparently yes.
+          </p></span
+        >
       </div>
     </section>
 
@@ -116,7 +123,15 @@
         href="https://www.youtube.com/watch?v=_2kIO80tAfU"
       >
         <div>
-          <h2>Showreel</h2>
+          <span class="blockreveal">
+            <h2
+              data-aos="reveal-up"
+              data-aos-duration="3000"
+              data-aos-delay="500"
+            >
+              Showreel
+            </h2>
+          </span>
           <i class="fas fa-play-circle"></i>
         </div>
       </a>
@@ -224,6 +239,9 @@
       });
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/image-parallax.js"></script>
   </body>

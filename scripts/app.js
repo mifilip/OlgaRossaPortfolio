@@ -27,26 +27,6 @@ window.onscroll = () => {
   else nav.classList.remove("scroll");
 };
 
-function isInViewport(el) {
-  var top = el.offsetTop;
-  var left = el.offsetLeft;
-  var width = el.offsetWidth;
-  var height = el.offsetHeight;
-
-  while (el.offsetParent) {
-    el = el.offsetParent;
-    top += el.offsetTop;
-    left += el.offsetLeft;
-  }
-
-  return (
-    top < window.pageYOffset + window.innerHeight &&
-    left < window.pageXOffset + window.innerWidth &&
-    top + height > window.pageYOffset &&
-    left + width > window.pageXOffset
-  );
-}
-
 // check document is ready
 var domReady = function (callback) {
   document.readyState === "interactive" || document.readyState === "complete"
@@ -62,7 +42,89 @@ var domReady = function (callback) {
 //   } else 0;
 // };
 
+// let links = document.querySelectorAll("a");
+// if (links) {
+//   links.forEach((link) => {
+//     link.onclick = (e) => {
+//       let body = document.querySelector("body");
+//       //in async handler ajax/timer do these actions:
+//       setTimeout(function () {
+//         if (body.classList.contains("fade-out")) {
+//           console.log("navigating...");
+//           if (!e.srcElement.parentElement.href) {
+//             window.location = e.srcElement.href;
+//           } else {
+//             window.location = e.srcElement.parentElement.href;
+//           }
+//         } else {
+//           console.log("whoops", e.srcElement);
+//         }
+//       }, 500);
+//       body.classList.add("fade-out");
+//     };
+//   });
+// }
+
+function delay(n) {
+  n = n || 2000;
+  return new Promise((done) => {
+    setTimeout(() => {
+      done();
+    }, n);
+  });
+}
+
+function pageTransition() {
+  var tl = gsap.timeline();
+  tl.to(".loading-screen", {
+    duration: 1,
+    opacity: 1,
+    ease: "Expo.easeInOut",
+  });
+
+  tl.to(".loading-screen", {
+    duration: 1,
+    opacity: 0,
+    ease: "Expo.easeInOut",
+  });
+}
+
+function contentAnimation() {
+  var tl = gsap.timeline();
+  tl.from("h1", {
+    duration: 1,
+    opacity: 1,
+  });
+}
+
+barba.init({
+  sync: true,
+
+  transitions: [
+    {
+      async leave(data) {
+        const done = this.async();
+
+        pageTransition();
+        await delay(1000);
+        done();
+      },
+
+      async enter(data) {
+        contentAnimation();
+      },
+
+      async once(data) {
+        contentAnimation();
+      },
+    },
+  ],
+});
+
+//windows loads, call content animation
 const header = document.querySelector("header");
-window.onload = function () {
+
+window.onload = () => {
+  contentAnimation();
   header.className += " loaded";
 };
