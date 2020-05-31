@@ -88,7 +88,7 @@ function pageTransition() {
     ease: "Expo.easeInOut",
     delay: 0.3,
   });
-  tl.set(".loading-screen", { left: "-100%" });
+  tl.set(".loading-screen", { bottom: "-100%", height: "-100%" });
 }
 function contentAnimation() {
   var tl = gsap.timeline();
