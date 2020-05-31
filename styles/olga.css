@@ -59,6 +59,7 @@ h2 {
   display: block;
   top: 0;
   color: var(--white);
+  white-space: nowrap;
 }
 
 h3 {
@@ -203,7 +204,7 @@ main.hero .intro span {
   height: auto;
   display: inline-block;
   width: min-content;
-  padding: 3rem calc(7rem + 2.5 * (100vw - 90rem) / 20);
+  padding: 3rem calc(5rem + 2.5 * (100vw - 90rem) / 20);
 }
 
 main.hero .intro span.olga {
@@ -396,15 +397,6 @@ section.showreel .showreel-bg:hover {
   transition: 0.7s all var(--easeOut);
 }
 
-.get-in-touch a {
-  color: inherit;
-  transition: 0.3s all var(--easeInOut);
-}
-.get-in-touch a:hover {
-  color: var(--accent);
-  transition: 0.2s all var(--easeInOut);
-}
-
 .get-in-touch figure {
   grid-column: 1/5;
   grid-row: 1;
@@ -420,9 +412,50 @@ span.getin h2:nth-of-type(2) {
 }
 .get-in-touch .details h3 {
   margin: 4rem 0rem 0rem 8rem;
+  position: relative;
+  color: inherit;
+  display: inline-block;
+  cursor: pointer;
 }
+.getin .blockreveal {
+  display: block;
+  padding: 0rem 2rem;
+}
+.getin .blockreveal:nth-of-type(2) {
+  margin: -2rem 0rem 0rem 6rem;
+}
+
+.get-in-touch a {
+  color: var(--white);
+  transition: 0.5s all var(--easeOut);
+  text-decoration: none;
+}
+.get-in-touch a:hover {
+  color: var(--accent);
+  transition: 0.5s all var(--easeOut);
+}
+
 .get-in-touch .details p {
   margin: 2rem 0rem 0rem 8rem;
+  color: var(--white);
+}
+
+.get-in-touch .details h3:after {
+  cursor: pointer;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 98%;
+  height: 0.3rem;
+  background: var(--accent);
+  content: "";
+  transform: translateY(0.5rem);
+  transition: 0.5s all var(--easeOut);
+}
+
+.get-in-touch .details h3:hover::after {
+  transition: 0.5s all var(--easeOut);
+  top: 120%;
 }
 
 @media only screen and (max-width: 599px) {
@@ -543,10 +576,6 @@ span.getin h2:nth-of-type(2) {
     transform: rotate(90deg);
     transition: bottom 0.1s ease-out,
       transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  section.showreel div {
-    transform: translate(-50%, -50%);
   }
 
   .details {
