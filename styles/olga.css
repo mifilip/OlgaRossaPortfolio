@@ -231,9 +231,8 @@ main.hero .intro h1 {
 span.blockreveal {
   overflow-y: hidden;
   height: max-content;
-  width: min-content;
   display: inline-block;
-  padding: 5rem 2rem;
+  padding: 1rem 2rem;
   margin: 0rem 0rem 0rem -2rem;
 }
 .revealed {
@@ -265,7 +264,27 @@ span.blockreveal {
   }
 }
 
+span.img-reveal {
+  overflow: hidden;
+  /* height: max-content; */
+  display: inline-block;
+  /* padding: 1rem 2rem; */
+  /* margin: 0rem 0rem 0rem -2rem; */
+  /* animation: transY; */
+}
+
 /* AOS */
+[data-aos="translate-up"] {
+  transition-property: height, scale;
+  height: 0%;
+  scale: 1.1;
+  transition-timing-function: var(--easeOut) !important;
+}
+[data-aos="translate-up"].aos-animate {
+  transition-timing-function: var(--easeOut) !important;
+  height: 100%;
+  scale: 1;
+}
 [data-aos="reveal-up"] {
   transform: translateY(160%);
   transition-property: transform;
