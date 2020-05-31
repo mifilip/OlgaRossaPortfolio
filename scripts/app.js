@@ -77,24 +77,20 @@ function delay(n) {
 function pageTransition() {
   var tl = gsap.timeline();
   tl.to(".loading-screen", {
-    duration: 1,
-    opacity: 1,
+    duration: 1.2,
+    width: "100%",
+    left: "0%",
     ease: "Expo.easeInOut",
   });
 
   tl.to(".loading-screen", {
     duration: 1,
-    opacity: 0,
+    width: "100%",
+    left: "100%",
     ease: "Expo.easeInOut",
+    delay: 0.3,
   });
-}
-
-function contentAnimation() {
-  var tl = gsap.timeline();
-  tl.from("h1", {
-    duration: 1,
-    opacity: 1,
-  });
+  tl.set(".loading-screen", { left: "-100%" });
 }
 
 barba.init({
