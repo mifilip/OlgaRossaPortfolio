@@ -18,6 +18,10 @@ body {
   background-color: var(--white);
 }
 
+.darkmode {
+  background-color: var(--black);
+}
+
 html {
   font-size: calc(7px + 2.5 * (100vw - 500px) / 700);
   font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -176,11 +180,11 @@ nav ul a:focus::after {
 
 a.popup-youtube {
   cursor: pointer;
-
-  line-height: 26px;
-
   text-decoration: none;
-  border-bottom: 1px dotted;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 main.hero {
   padding: 0 1rem;
@@ -190,16 +194,16 @@ main.hero {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 0 10rem 0;
 }
 
 main.hero .intro span {
   color: var(--white);
-  top: 0%;
   overflow: hidden;
-  height: max-content;
+  height: auto;
   display: inline-block;
   width: min-content;
-  padding: 2rem calc(7rem + 2.5 * (100vw - 90rem) / 20);
+  padding: 3rem calc(7rem + 2.5 * (100vw - 90rem) / 20);
 }
 
 main.hero .intro span.olga {
@@ -228,7 +232,8 @@ span.blockreveal {
   height: max-content;
   width: min-content;
   display: inline-block;
-  padding: 5rem 0;
+  padding: 5rem 2rem;
+  margin: 0rem 0rem 0rem -2rem;
 }
 .revealed {
   animation: slide-in 3s forwards var(--easeOut);
@@ -319,7 +324,7 @@ footer > p {
 
 img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: cover;
   z-index: 0;
 }
@@ -330,7 +335,7 @@ figure {
   width: 100%;
 }
 section {
-  padding-top: 20rem;
+  padding: 10rem 0;
   background-color: var(--black);
 }
 
@@ -355,12 +360,10 @@ section {
 section.showreel {
   cursor: pointer;
   height: 70rem;
+  position: relative;
 }
 
 section.showreel div {
-  left: 50%;
-  top: -50%;
-  transform: translate(-50%, -50%);
   position: relative;
   display: flex;
   width: max-content;
@@ -384,8 +387,10 @@ section.showreel div > * {
 
 section.showreel .showreel-bg {
   width: 100%;
+  height: 100%;
   transition: 0.7s all var(--easeOut);
 }
+
 section.showreel .showreel-bg:hover {
   transform: scale(1.02);
   transition: 0.7s all var(--easeOut);
