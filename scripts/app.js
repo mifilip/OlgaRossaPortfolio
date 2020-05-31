@@ -78,15 +78,13 @@ function pageTransition() {
   var tl = gsap.timeline();
   tl.to(".loading-screen", {
     duration: 1.2,
-    width: "100%",
-    left: "0%",
+    bottom: "0%",
     ease: "Expo.easeInOut",
   });
 
   tl.to(".loading-screen", {
     duration: 1,
-    width: "100%",
-    left: "100%",
+    height: "0%",
     ease: "Expo.easeInOut",
     delay: 0.3,
   });
