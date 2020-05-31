@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: 0.7s var(--easeOut);
 }
 
 body {
@@ -394,6 +395,14 @@ section.showreel div {
 section.showreel div > * {
   align-content: center;
   justify-content: center;
+}
+section.showreel i {
+  font-size: 8rem;
+  display: inherit;
+  color: var(--white);
+}
+section.showreel i:hover {
+  color: var(--accent);
 }
 
 .player-btn {
