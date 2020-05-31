@@ -92,6 +92,13 @@ function pageTransition() {
   });
   tl.set(".loading-screen", { left: "-100%" });
 }
+function contentAnimation() {
+  var tl = gsap.timeline();
+  tl.from("h1", {
+    duration: 1,
+    opacity: 1,
+  });
+}
 
 barba.init({
   sync: true,
