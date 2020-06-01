@@ -21,6 +21,16 @@ body {
 
 .darkmode {
   background-color: var(--black);
+  color: var(--white);
+}
+.lightmode {
+  background-color: var(--white);
+  color: var(--black);
+}
+.lightmode #hamburger-inner,
+.lightmode #hamburger-inner::before,
+.lightmode #hamburger-inner::after {
+  background-color: var(--black);
 }
 
 .loading-screen {
@@ -81,15 +91,28 @@ h2 {
   line-height: 100%;
   display: block;
   top: 0;
-  color: var(--white);
+  /* color: var(--white); */
   white-space: nowrap;
 }
 
 h3 {
   font-size: 3rem;
   line-height: 100%;
-  color: var(--white);
+  /* color: var(--white); */
   text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h5 {
+  font-size: 3rem;
+  line-height: 100%;
+  /* color: var(--white); */
+  /* text-transform: ; */
   margin-bottom: 1rem;
   letter-spacing: 1rem;
   font-style: normal;
@@ -119,7 +142,7 @@ nav {
   height: 12rem;
   padding: 1rem 5rem;
   display: flex;
-  color: var(--white);
+  /* color: var(--white); */
   transition: 0.35s all var(--easeOut);
 }
 
@@ -132,9 +155,6 @@ nav.scroll {
 
 nav.scroll ul a::after {
   background: var(--black);
-}
-nav.scroll button span > * {
-  background: red;
 }
 
 nav > * {
@@ -222,7 +242,7 @@ main.hero {
 }
 
 main.hero .intro span {
-  color: var(--white);
+  /* color: var(--white); */
   overflow: hidden;
   height: auto;
   display: inline-block;
@@ -287,13 +307,13 @@ span.blockreveal {
   }
 }
 
+main.hero.portfolio {
+  background: unset;
+}
+
 span.img-reveal {
   overflow: hidden;
-  /* height: max-content; */
   display: inline-block;
-  /* padding: 1rem 2rem; */
-  /* margin: 0rem 0rem 0rem -2rem; */
-  /* animation: transY; */
 }
 
 /* AOS */
@@ -325,6 +345,21 @@ main.hero .intro .rossa h1 {
   animation-delay: 1s;
 }
 
+/* portfolio */
+
+@keyframes header-move-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+main.hero.portfolio .intro {
+  animation: header-move-up 3s forwards var(--easeOut) 1.5s;
+}
+
 footer {
   width: calc(100vw - (100vw - 100%));
   align-items: center;
@@ -332,7 +367,7 @@ footer {
   padding: 10rem 5rem 5rem 5rem;
   display: flex;
   justify-content: space-between;
-  background-color: var(--black);
+  /* background-color: var(--black); */
 }
 footer p {
   display: inline-block;
@@ -530,7 +565,7 @@ span.getin h2:nth-of-type(2) {
     transition: all 1s var(--easeOut);
   }
   .menu a {
-    color: var(--white);
+    /* color: var(--white); */
     font-size: 3rem;
     transition: opacity 1s var(--easeOut);
     overflow: hidden;
@@ -540,8 +575,10 @@ span.getin h2:nth-of-type(2) {
     margin-top: 30vh;
   }
 
+  .lightmode .menu {
+    background: var(--white);
+  }
   .menu {
-    background: var(--black);
     position: fixed;
     top: 0;
     transition: all 1s var(--easeOut);
