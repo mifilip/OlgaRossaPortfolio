@@ -111,6 +111,7 @@ barba.init({
         const done = this.async();
 
         pageTransition();
+        document.body.classList.add("lightmode");
         await delay(1000);
         done();
       },
