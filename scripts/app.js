@@ -5,21 +5,25 @@ document.getElementById("footer-text").innerHTML =
 //hamburger
 
 const hamburgerBtn = document.getElementById("hamburger");
-const menuContainer = document.querySelector(".menu-container");
-const menuOverlay = document.querySelector(".menu-overlay");
 const navBtns = document.querySelectorAll(".nav-btn");
+const nav = document.querySelector("nav");
+const burger = document.querySelector("#hamburger");
+const links = nav.querySelectorAll("a");
+const menu = nav.querySelector(".menu");
 
 hamburgerBtn.addEventListener("click", function () {
   hamburgerBtn.classList.toggle("is-active");
-  menuContainer.classList.toggle("menu-container-active");
-  menuOverlay.classList.toggle("menu-overlay-active");
+});
 
-  navBtns.forEach((element) => {
-    element.classList.toggle("nav-btn-active");
+burger.addEventListener("click", () => {
+  nav.classList.toggle("nav-open");
+  burger.classList.toggle("toggle");
+  menu.classList.toggle("menu-open");
+  links.forEach((element) => {
+    element.classList.toggle("a-active");
   });
 });
 
-const nav = document.querySelector("nav");
 const navElements = nav.children;
 //Zmiana koloru na scroll
 window.onscroll = () => {

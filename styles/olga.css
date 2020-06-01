@@ -523,12 +523,55 @@ span.getin h2:nth-of-type(2) {
     padding: 0rem 0rem;
   }
 
-  div.copy {
-    padding: 10rem 4rem;
+  ul.menu > * {
+    margin-left: unset;
+  }
+  .nav-open * {
+    transition: all 1s var(--easeOut);
+  }
+  .menu a {
+    color: var(--white);
+    font-size: 3rem;
+    transition: opacity 1s var(--easeOut);
+    overflow: hidden;
+    margin: 5rem 30vw;
+  }
+  .menu a:nth-of-type(1) {
+    margin-top: 30vh;
   }
 
-  nav > *:nth-child(3) {
-    display: none;
+  .menu {
+    background: var(--black);
+    position: fixed;
+    top: 0;
+    transition: all 1s var(--easeOut);
+    display: block;
+    width: 100vw;
+    text-align: center;
+    z-index: -3;
+    height: 100vh;
+    transition: all 1s var(--easeOut);
+    opacity: 0;
+  }
+
+  .menu-open {
+    opacity: 1;
+  }
+
+  menu a.a-active {
+    transition: opacity 1s var(--easeOut);
+    margin-top: 15vh;
+    opacity: 1 !important;
+  }
+
+  nav > :nth-child(3),
+  #hamburger {
+    right: 0rem;
+    position: absolute;
+  }
+
+  div.copy {
+    padding: 10rem 4rem;
   }
 
   nav .active {
