@@ -36,6 +36,10 @@ body {
   background-color: var(--black);
 }
 
+a {
+  color: inherit;
+}
+
 .loading-screen {
   position: relative;
   padding-left: 0;
@@ -241,13 +245,13 @@ nav ul a:focus::after {
   transform: translateY(0.5rem);
 }
 
-a.popup-youtube {
-  /* cursor: pointer;
+.showreel a {
+  cursor: pointer;
   text-decoration: none;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
 }
 
 main.hero {

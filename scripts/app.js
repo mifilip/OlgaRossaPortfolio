@@ -33,9 +33,9 @@ window.onscroll = () => {
 
 // check document is ready
 var domReady = function (callback) {
-  document.readyState === "interactive" || document.readyState === "complete"
-    ? callback()
-    : document.addEventListener("DOMContentLoaded", callback);
+  document.readyState === "interactive" || document.readyState === "complete" ?
+    callback() :
+    document.addEventListener("DOMContentLoaded", callback);
 };
 
 // const headings = document.querySelector("h2");
@@ -92,8 +92,12 @@ function pageTransition() {
     ease: "Expo.easeInOut",
     delay: 0.3,
   });
-  tl.set(".loading-screen", { bottom: "-100%", height: "100%" });
+  tl.set(".loading-screen", {
+    bottom: "-100%",
+    height: "100%"
+  });
 }
+
 function contentAnimation() {
   var tl = gsap.timeline();
   tl.from("h1", {
@@ -105,26 +109,24 @@ function contentAnimation() {
 barba.init({
   sync: true,
 
-  transitions: [
-    {
-      async leave(data) {
-        const done = this.async();
+  transitions: [{
+    async leave(data) {
+      const done = this.async();
 
-        pageTransition();
-        document.body.classList.add("lightmode");
-        await delay(1000);
-        done();
-      },
-
-      async enter(data) {
-        contentAnimation();
-      },
-
-      async once(data) {
-        contentAnimation();
-      },
+      pageTransition();
+      // document.body.classList.add("lightmode");
+      await delay(1000);
+      done();
     },
-  ],
+
+    async enter(data) {
+      contentAnimation();
+    },
+
+    async once(data) {
+      contentAnimation();
+    },
+  }, ],
 });
 
 //windows loads, call content animation
