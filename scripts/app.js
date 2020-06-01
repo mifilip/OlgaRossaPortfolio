@@ -134,3 +134,6 @@ window.onload = () => {
   contentAnimation();
   header.className += " loaded";
 };
+
+const showProjects = document.body.getElementById("showprojects");
+showProjects.addEventListener("click");

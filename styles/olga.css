@@ -16,6 +16,7 @@
 }
 
 body {
+  scroll-behavior: smooth;
   background-color: var(--white);
 }
 
@@ -23,10 +24,12 @@ body {
   background-color: var(--black);
   color: var(--white);
 }
+
 .lightmode {
   background-color: var(--white);
   color: var(--black);
 }
+
 .lightmode #hamburger-inner,
 .lightmode #hamburger-inner::before,
 .lightmode #hamburger-inner::after {
@@ -84,6 +87,7 @@ h1 {
 h1:nth-of-type(2) {
   left: 10rem;
 }
+
 h2 {
   font-size: 10rem;
   letter-spacing: -0.4rem;
@@ -111,12 +115,24 @@ h3 {
 h5 {
   font-size: 3rem;
   line-height: 100%;
-  /* color: var(--white); */
   /* text-transform: ; */
   margin-bottom: 1rem;
   letter-spacing: 1rem;
   font-style: normal;
   font-weight: 800;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h6 {
+  font-size: 3rem;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 1rem;
   font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -157,22 +173,24 @@ nav.scroll ul a::after {
   background: var(--black);
 }
 
-nav > * {
+nav>* {
   position: relative;
   display: block;
   align-self: center;
 }
 
-nav > *:nth-child(2) {
+nav>*:nth-child(2) {
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
 }
-nav > *:nth-child(3),
+
+nav>*:nth-child(3),
 #hamburger {
   right: 5rem;
   position: absolute;
 }
+
 #hamburger {
   display: none;
 }
@@ -190,12 +208,13 @@ h4 {
   display: inline-block;
   cursor: pointer;
 }
+
 nav h4 {
   font-size: 3rem;
   font-weight: 400;
 }
 
-ul.menu > * {
+ul.menu>* {
   margin-left: 2rem;
 }
 
@@ -223,13 +242,14 @@ nav ul a:focus::after {
 }
 
 a.popup-youtube {
-  cursor: pointer;
+  /* cursor: pointer;
   text-decoration: none;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
+
 main.hero {
   padding: 0 1rem;
   height: 100vh;
@@ -253,6 +273,7 @@ main.hero .intro span {
 main.hero .intro span.olga {
   padding-left: 0;
 }
+
 main.hero .intro span.rossa {
   padding-right: 0;
 }
@@ -278,6 +299,7 @@ span.blockreveal {
   padding: 1rem 2rem;
   margin: 0rem 0rem 0rem -2rem;
 }
+
 .revealed {
   animation: slide-in 3s forwards var(--easeOut);
   position: relative;
@@ -289,10 +311,12 @@ span.blockreveal {
 .loaded {
   animation: fadeup 3s forwards var(--easeOut) 1.5s;
 }
+
 @keyframes fadeup {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -302,6 +326,7 @@ span.blockreveal {
   0% {
     transform: translateY(140%);
   }
+
   100% {
     transform: translateY(0%);
   }
@@ -309,6 +334,7 @@ span.blockreveal {
 
 main.hero.portfolio {
   background: unset;
+
 }
 
 span.img-reveal {
@@ -323,16 +349,19 @@ span.img-reveal {
   scale: 1.1;
   transition-timing-function: var(--easeOut) !important;
 }
+
 [data-aos="translate-up"].aos-animate {
   transition-timing-function: var(--easeOut) !important;
   height: 100%;
   scale: 1;
 }
+
 [data-aos="reveal-up"] {
   transform: translateY(160%);
   transition-property: transform;
   transition-timing-function: var(--easeOut) !important;
 }
+
 [data-aos="reveal-up"].aos-animate {
   transition-timing-function: var(--easeOut) !important;
   transform: translateY(0%);
@@ -341,6 +370,7 @@ span.img-reveal {
 main.hero .intro .olga h1 {
   animation-delay: 0.5s;
 }
+
 main.hero .intro .rossa h1 {
   animation-delay: 1s;
 }
@@ -351,6 +381,7 @@ main.hero .intro .rossa h1 {
   0% {
     transform: translateY(0%);
   }
+
   100% {
     transform: translateY(-50%);
   }
@@ -359,9 +390,54 @@ main.hero .intro .rossa h1 {
 main.hero.portfolio {
   flex-direction: column;
 }
+
 main.hero.portfolio .intro {
-  animation: header-move-up 3s forwards var(--easeOut) 1s;
+  margin: 8rem;
 }
+
+.projects figure:nth-of-type(1) {
+  grid-row: 1;
+  grid-column: 1/8;
+}
+
+.projects .copy:nth-of-type(1) {
+  grid-row: 1;
+  grid-column: 7/12;
+}
+
+.projects figure:nth-of-type(2) {
+  grid-row: 2;
+  grid-column: 6/13;
+}
+
+.projects .copy:nth-of-type(2) {
+  grid-row: 2;
+  grid-column: 2/7;
+}
+
+.projects figure:nth-of-type(3) {
+  grid-row: 3;
+  grid-column: 1/8;
+}
+
+.projects .copy:nth-of-type(3) {
+  grid-row: 3;
+  grid-column: 7/12;
+}
+
+
+.projects .copy h6,
+.projects .copy p {
+  color: unset;
+}
+
+.projects .copy span.blockreveal {
+  display: block;
+}
+
+
+
+
 
 footer {
   width: calc(100vw - (100vw - 100%));
@@ -372,6 +448,7 @@ footer {
   justify-content: space-between;
   /* background-color: var(--black); */
 }
+
 footer p {
   display: inline-block;
 }
@@ -385,12 +462,13 @@ footer i {
   font-size: 2.5rem;
   padding: 0 0 0 2rem;
 }
+
 footer i:hover {
   color: var(--accent);
   transition: 0.5s var(--easeInOut);
 }
 
-footer > p {
+footer>p {
   font-size: 2rem;
   text-align: center;
 }
@@ -415,6 +493,7 @@ figure {
   height: 100%;
   width: 100%;
 }
+
 section {
   padding: 10rem 0;
   background-color: var(--black);
@@ -424,6 +503,7 @@ section {
   grid-column: 1/6;
   grid-row: 1/3;
 }
+
 .home-images figure:nth-child(2) {
   grid-column: 8/13;
   grid-row: 2/5;
@@ -452,15 +532,17 @@ section.showreel div {
   flex-direction: column;
 }
 
-section.showreel div > * {
+section.showreel div>* {
   align-content: center;
   justify-content: center;
 }
+
 section.showreel i {
   font-size: 8rem;
   display: inherit;
   color: var(--white);
 }
+
 section.showreel i:hover {
   color: var(--accent);
 }
@@ -495,10 +577,12 @@ section.showreel .showreel-bg:hover {
   grid-column: 6/12;
   grid-row: 1;
 }
+
 span.getin h2:nth-of-type(2) {
   margin: -3rem 0 0px 8rem;
   color: var(--accent);
 }
+
 .get-in-touch .details h3 {
   margin: 4rem 0rem 0rem 8rem;
   position: relative;
@@ -506,10 +590,12 @@ span.getin h2:nth-of-type(2) {
   display: inline-block;
   cursor: pointer;
 }
+
 .getin .blockreveal {
   display: block;
   padding: 0rem 2rem;
 }
+
 .getin .blockreveal:nth-of-type(2) {
   margin: -2rem 0rem 0rem 6rem;
 }
@@ -557,6 +643,7 @@ span.getin h2:nth-of-type(2) {
     grid-column: unset !important;
     grid-row: unset !important;
   }
+
   .grid {
     display: grid;
     align-items: flex-end;
@@ -566,12 +653,14 @@ span.getin h2:nth-of-type(2) {
     padding: 0rem 0rem;
   }
 
-  ul.menu > * {
+  ul.menu>* {
     margin-left: unset;
   }
+
   .nav-open * {
     transition: all 1s var(--easeOut);
   }
+
   .menu a {
     /* color: var(--white); */
     font-size: 3rem;
@@ -579,6 +668,7 @@ span.getin h2:nth-of-type(2) {
     overflow: hidden;
     margin: 5rem 30vw;
   }
+
   .menu a:nth-of-type(1) {
     margin-top: 30vh;
   }
@@ -610,7 +700,7 @@ span.getin h2:nth-of-type(2) {
     opacity: 1 !important;
   }
 
-  nav > :nth-child(3),
+  nav> :nth-child(3),
   #hamburger {
     right: 0rem;
     position: absolute;
@@ -623,6 +713,7 @@ span.getin h2:nth-of-type(2) {
   nav .active {
     display: block;
   }
+
   nav.scroll {
     height: 8rem;
   }
@@ -662,6 +753,7 @@ span.getin h2:nth-of-type(2) {
     display: block;
     top: 50%;
   }
+
   #hamburger-inner,
   #hamburger-inner::before,
   #hamburger-inner::after {
@@ -674,17 +766,21 @@ span.getin h2:nth-of-type(2) {
     transition-timing-function: var(--easeInOut);
     border-radius: 4px;
   }
+
   #hamburger-inner::before,
   #hamburger-inner::after {
     content: "";
     display: block;
   }
+
   #hamburger-inner::before {
     top: -10px;
   }
+
   #hamburger-inner::after {
     bottom: -10px;
   }
+
   /*
      * Spin Reverse
      */
@@ -692,9 +788,11 @@ span.getin h2:nth-of-type(2) {
     transition-duration: 0.22s;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
+
   .hamburger--spin-r #hamburger-inner::before {
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
   }
+
   .hamburger--spin-r #hamburger-inner::after {
     transition: bottom 0.1s 0.25s ease-in,
       transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -711,6 +809,7 @@ span.getin h2:nth-of-type(2) {
     opacity: 0;
     transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
   }
+
   .hamburger--spin-r.is-active #hamburger-inner::after {
     bottom: 0;
     transform: rotate(90deg);
