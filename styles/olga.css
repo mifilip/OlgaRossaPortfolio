@@ -352,12 +352,15 @@ main.hero .intro .rossa h1 {
     transform: translateY(0%);
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateY(-50%);
   }
 }
 
+main.hero.portfolio {
+  flex-direction: column;
+}
 main.hero.portfolio .intro {
-  animation: header-move-up 3s forwards var(--easeOut) 1.5s;
+  animation: header-move-up 3s forwards var(--easeOut) 1s;
 }
 
 footer {
@@ -511,22 +514,26 @@ span.getin h2:nth-of-type(2) {
   margin: -2rem 0rem 0rem 6rem;
 }
 
-.get-in-touch a {
-  color: var(--white);
+.get-in-touch a,
+.portfolio .categories a {
+  color: inherit;
   transition: 0.5s all var(--easeOut);
   text-decoration: none;
 }
-.get-in-touch a:hover {
+
+.get-in-touch a:hover,
+.portfolio .categories a:hover {
   color: var(--accent);
   transition: 0.5s all var(--easeOut);
 }
 
 .get-in-touch .details p {
+  color: inherit;
   margin: 2rem 0rem 0rem 8rem;
-  color: var(--white);
 }
 
-.get-in-touch .details h3:after {
+.get-in-touch .details h3:after,
+.portfolio .categories h5:after {
   cursor: pointer;
   position: absolute;
   top: 100%;
@@ -539,7 +546,8 @@ span.getin h2:nth-of-type(2) {
   transition: 0.5s all var(--easeOut);
 }
 
-.get-in-touch .details h3:hover::after {
+.get-in-touch .details h3:hover::after,
+.portfolio .categories h5:hover::after {
   transition: 0.5s all var(--easeOut);
   top: 120%;
 }
@@ -578,6 +586,7 @@ span.getin h2:nth-of-type(2) {
   .lightmode .menu {
     background: var(--white);
   }
+
   .menu {
     position: fixed;
     top: 0;
