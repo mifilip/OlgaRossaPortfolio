@@ -125,6 +125,7 @@ barba.init({
 
     async once(data) {
       contentAnimation();
+      AOS.refresh()
     },
   }, ],
 });
