@@ -158,7 +158,8 @@ header {
   position: absolute;
   width: calc(100vw - (100vw - 100%));
   z-index: 3;
-  position: sticky;
+  /* position: sticky; */
+  position: fixed;
   top: 0;
   opacity: 0;
   background: unset !important;
@@ -444,6 +445,10 @@ main.hero.portfolio .intro {
 
 .projects .copy span.blockreveal {
   display: block;
+}
+
+.contact.grid {
+  padding-top: 12rem;
 }
 
 .contact figure:nth-of-type(1) {
