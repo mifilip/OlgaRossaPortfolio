@@ -156,6 +156,7 @@ header {
   z-index: 3;
   position: fixed;
   opacity: 0;
+  background: unset !important;
 }
 
 nav {
@@ -313,7 +314,7 @@ span.blockreveal {
 }
 
 .loaded {
-  animation: fadeup 3s forwards var(--easeOut) 1.5s;
+  animation: fadeup 3s forwards var(--easeOut);
 }
 
 @keyframes fadeup {
