@@ -30,6 +30,10 @@ body {
   color: var(--black);
 }
 
+.color-white {
+  color: var(--white);
+}
+
 .lightmode #hamburger-inner,
 .lightmode #hamburger-inner::before,
 .lightmode #hamburger-inner::after {
@@ -45,7 +49,7 @@ a {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  background-color: var(--black);
+  background-color: var(--white);
   width: 100%;
   height: 100%;
   bottom: -100%;
@@ -154,7 +158,8 @@ header {
   position: absolute;
   width: calc(100vw - (100vw - 100%));
   z-index: 3;
-  position: fixed;
+  position: sticky;
+  top: 0;
   opacity: 0;
   background: unset !important;
 }
@@ -441,7 +446,15 @@ main.hero.portfolio .intro {
   display: block;
 }
 
+.contact figure:nth-of-type(1) {
+  grid-row: 1;
+  grid-column: 1/6;
+}
 
+.contact .copy:nth-of-type(1) {
+  grid-row: 1;
+  grid-column: 6/11;
+}
 
 footer {
   width: calc(100vw - (100vw - 100%));
