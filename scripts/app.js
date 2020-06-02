@@ -116,17 +116,21 @@ barba.init({
       pageTransition();
       // document.body.classList.add("lightmode");
       await delay(1000);
+      console.log("pageTransition();await delay(1000)");
       done();
     },
 
     async enter(data) {
       contentAnimation();
+      AOS.refresh();
+      console.log("    async enter(data)");
+
     },
 
     async once(data) {
       contentAnimation();
       AOS.refresh();
-      console.log("hello");
+      console.log("    async once(data)");
     },
   }, ],
 });
