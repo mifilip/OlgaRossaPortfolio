@@ -122,15 +122,18 @@ barba.init({
 
     async enter(data) {
       contentAnimation();
-      AOS.refresh();
-      console.log("    async enter(data)");
+
+      // AOS.refresh();
+      setTimeout(AOS.refreshHard, 150);
+      console.log("setTimeout(AOS.refreshHard, 150);");
 
     },
 
     async once(data) {
       contentAnimation();
-      AOS.refresh();
-      console.log("    async once(data)");
+      // AOS.refresh();
+      setTimeout(AOS.refreshHard, 1500);
+      console.log("setTimeout(AOS.refreshHard, 1500);");
     },
   }, ],
 });
@@ -142,6 +145,8 @@ window.onload = () => {
   contentAnimation();
   header.className += " loaded";
 };
+
+window.addEventListener('load', AOS.refresh);
 
 // const showProjects = document.body.getElementById("showprojects");
 // showProjects.addEventListener("click");
