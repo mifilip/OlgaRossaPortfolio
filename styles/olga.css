@@ -161,8 +161,12 @@ header {
   /* position: sticky; */
   position: fixed;
   top: 0;
-  opacity: 0;
+  /* opacity: 0; */
   background: unset !important;
+}
+
+header.index-page {
+  opacity: 0;
 }
 
 nav {
