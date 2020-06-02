@@ -125,7 +125,8 @@ barba.init({
 
     async once(data) {
       contentAnimation();
-      AOS.refresh()
+      AOS.refresh();
+      console.log("hello");
     },
   }, ],
 });
@@ -138,5 +139,5 @@ window.onload = () => {
   header.className += " loaded";
 };
 
-const showProjects = document.body.getElementById("showprojects");
-showProjects.addEventListener("click");
+// const showProjects = document.body.getElementById("showprojects");
+// showProjects.addEventListener("click");
