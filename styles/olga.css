@@ -336,9 +336,10 @@ span.blockreveal {
   }
 }
 
-main.hero.portfolio {
+main.hero.portfolio,
+main.hero.contact,
+main.hero.gallery {
   background: unset;
-
 }
 
 span.img-reveal {
@@ -645,6 +646,15 @@ span.getin h2:nth-of-type(2) {
     grid-column: unset !important;
     grid-row: unset !important;
   }
+
+
+  /* !!!!!!!!!!!!!!!!!!!!!!!!!
+body.prevent-scroll {
+    overflow: hidden;
+    height: 100vh;
+    margin-left: calc(100vw - 100%);
+} */
+
 
   .grid {
     display: grid;

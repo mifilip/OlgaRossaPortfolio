@@ -29,7 +29,7 @@
   <header>
     <nav>
       <ul class="lang-switch">
-        <a href="index.html">ENG/PL</a>
+        <a href="/pl">ENG/PL</a>
       </ul>
       <a href="index.html">
         <h4 class="logo">Olga Rossa</h4>
@@ -135,66 +135,68 @@
         </span>
       </div>
     </section>
-  </div>
 
-  <footer>
-    <p id="footer-text"></p>
-    <p>
-      <a href="https://www.facebook.com/meolgarossa/"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/olgarossa_"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:contact@olgarossa.com"><i class="fas fa-envelope"></i></a>
-    </p>
-  </footer>
 
-  <style type="text/css">
-    /**
+    <footer>
+      <p id="footer-text"></p>
+      <p>
+        <a href="https://www.facebook.com/meolgarossa/"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/olgarossa_"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:contact@olgarossa.com"><i class="fas fa-envelope"></i></a>
+      </p>
+    </footer>
+
+    <style type="text/css">
+      /**
        * Simple fade transition,
        */
-    .mfp-fade.mfp-bg {
-      opacity: 0;
-      transition: all 0.3s ease-out;
-    }
+      .mfp-fade.mfp-bg {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
 
-    .mfp-fade.mfp-bg.mfp-ready {
-      opacity: 0.8;
-    }
+      .mfp-fade.mfp-bg.mfp-ready {
+        opacity: 0.8;
+      }
 
-    .mfp-fade.mfp-bg.mfp-removing {
-      opacity: 0;
-    }
+      .mfp-fade.mfp-bg.mfp-removing {
+        opacity: 0;
+      }
 
-    .mfp-fade.mfp-wrap .mfp-content {
-      opacity: 0;
-      transition: all 0.15s ease-out;
-    }
+      .mfp-fade.mfp-wrap .mfp-content {
+        opacity: 0;
+        transition: all 0.15s ease-out;
+      }
 
-    .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-      opacity: 1;
-    }
+      .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+        opacity: 1;
+      }
 
-    .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-      opacity: 0;
-    }
-  </style>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $(".popup-youtube").magnificPopup({
-        disableOn: 700,
-        type: "iframe",
-        mainClass: "mfp-fade",
-        removalDelay: 160,
-        preloader: false,
+      .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+        opacity: 0;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".popup-youtube").magnificPopup({
+          disableOn: 700,
+          type: "iframe",
+          mainClass: "mfp-fade",
+          removalDelay: 160,
+          preloader: false,
 
-        fixedContentPos: false,
+          fixedContentPos: false,
+        });
       });
-    });
-  </script>
+    </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-  <script src="https://unpkg.com/@barba/core"></script>
-  <script type="text/javascript" src="scripts/app.js"></script>
-  <script type="text/javascript" src="scripts/image-parallax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/image-parallax.js"></script>
+  </div>
 </body>
+
 
 </html>
