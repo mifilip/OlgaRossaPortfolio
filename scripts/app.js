@@ -138,12 +138,12 @@ barba.init({
   }, ],
 });
 
-//windows loads, call content animation
-const header = document.querySelector("header");
+//Header on the index page animates in with the delay from CSS
+const indexHeader = document.querySelector(".index-page");
 
 window.onload = () => {
   contentAnimation();
-  header.className += " loaded";
+  indexHeader.className += " loaded";
 };
 
 window.addEventListener('load', AOS.refresh);

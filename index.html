@@ -145,52 +145,52 @@
         <a href="mailto:contact@olgarossa.com"><i class="fas fa-envelope"></i></a>
       </p>
     </footer>
-
-    <style type="text/css">
-      /**
+  </div>
+  <style type="text/css">
+    /**
        * Simple fade transition,
        */
-      .mfp-fade.mfp-bg {
-        opacity: 0;
-        transition: all 0.3s ease-out;
-      }
+    .mfp-fade.mfp-bg {
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
 
-      .mfp-fade.mfp-bg.mfp-ready {
-        opacity: 0.8;
-      }
+    .mfp-fade.mfp-bg.mfp-ready {
+      opacity: 0.8;
+    }
 
-      .mfp-fade.mfp-bg.mfp-removing {
-        opacity: 0;
-      }
+    .mfp-fade.mfp-bg.mfp-removing {
+      opacity: 0;
+    }
 
-      .mfp-fade.mfp-wrap .mfp-content {
-        opacity: 0;
-        transition: all 0.15s ease-out;
-      }
+    .mfp-fade.mfp-wrap .mfp-content {
+      opacity: 0;
+      transition: all 0.15s ease-out;
+    }
 
-      .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-        opacity: 1;
-      }
+    .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+      opacity: 1;
+    }
 
-      .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-        opacity: 0;
-      }
-    </style>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $(".popup-youtube").magnificPopup({
-          disableOn: 700,
-          type: "iframe",
-          mainClass: "mfp-fade",
-          removalDelay: 160,
-          preloader: false,
+    .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+      opacity: 0;
+    }
+  </style>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".popup-youtube").magnificPopup({
+        disableOn: 700,
+        type: "iframe",
+        mainClass: "mfp-fade",
+        removalDelay: 160,
+        preloader: false,
 
-          fixedContentPos: false,
-        });
+        fixedContentPos: false,
       });
-    </script>
+    });
+  </script>
 
-  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
   <script src="https://unpkg.com/@barba/core"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
