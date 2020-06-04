@@ -43,36 +43,6 @@ var domReady = function (callback) {
     document.addEventListener("DOMContentLoaded", callback);
 };
 
-// const headings = document.querySelector("h2");
-
-// window.onscroll = () => {
-//   if (isInViewport(headings)) {
-//     headings.classList.add("revealed");
-//   } else 0;
-// };
-
-// let links = document.querySelectorAll("a");
-// if (links) {
-//   links.forEach((link) => {
-//     link.onclick = (e) => {
-//       let body = document.querySelector("body");
-//       //in async handler ajax/timer do these actions:
-//       setTimeout(function () {
-//         if (body.classList.contains("fade-out")) {
-//           console.log("navigating...");
-//           if (!e.srcElement.parentElement.href) {
-//             window.location = e.srcElement.href;
-//           } else {
-//             window.location = e.srcElement.parentElement.href;
-//           }
-//         } else {
-//           console.log("whoops", e.srcElement);
-//         }
-//       }, 500);
-//       body.classList.add("fade-out");
-//     };
-//   });
-// }
 
 function delay(n) {
   n = n || 2000;
@@ -134,8 +104,23 @@ barba.init({
       window.onscroll = () => {
         if (window.pageYOffset > 0) nav.classList.add("scroll");
         else nav.classList.remove("scroll");
-        console.log("onscroll")
+        console.log("onscroll");
       }
+
+
+
+
+      $(document).ready(function () {
+        $(".popup-youtube").magnificPopup({
+          disableOn: 700,
+          type: "iframe",
+          mainClass: "mfp-fade",
+          removalDelay: 160,
+          preloader: false,
+
+          fixedContentPos: false,
+        });
+      });
 
     },
 
