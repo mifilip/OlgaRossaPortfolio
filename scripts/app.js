@@ -116,6 +116,7 @@ barba.init({
           preloader: false,
 
           fixedContentPos: false,
+          console.log("popup1");
         });
       });
 
@@ -127,7 +128,7 @@ barba.init({
       window.onscroll = () => {
         if (window.pageYOffset > 0) nav.classList.add("scroll");
         else nav.classList.remove("scroll");
-        console.log("onscroll");
+        console.log("onscroll3");
       }
       // AOS.refresh();
       // setTimeout(AOS.refreshHard, 1500);
@@ -137,7 +138,7 @@ barba.init({
       window.onscroll = () => {
         if (window.pageYOffset > 0) nav.classList.add("scroll");
         else nav.classList.remove("scroll");
-        console.log("onscroll");
+        console.log("onscroll2");
       }
     }
   }, ],
