@@ -107,9 +107,6 @@ barba.init({
         console.log("onscroll");
       }
 
-
-
-
       $(document).ready(function () {
         $(".popup-youtube").magnificPopup({
           disableOn: 700,
@@ -127,10 +124,22 @@ barba.init({
     async once(data) {
       contentAnimation();
 
+      window.onscroll = () => {
+        if (window.pageYOffset > 0) nav.classList.add("scroll");
+        else nav.classList.remove("scroll");
+        console.log("onscroll");
+      }
       // AOS.refresh();
       // setTimeout(AOS.refreshHard, 1500);
       // console.log("setTimeout(AOS.refreshHard, 1500);");
     },
+    async after(data) {
+      window.onscroll = () => {
+        if (window.pageYOffset > 0) nav.classList.add("scroll");
+        else nav.classList.remove("scroll");
+        console.log("onscroll");
+      }
+    }
   }, ],
 });
 
