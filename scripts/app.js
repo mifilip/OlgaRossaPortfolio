@@ -85,22 +85,17 @@ barba.init({
   transitions: [{
     async leave(data) {
       const done = this.async();
-
       pageTransition();
-      // document.body.classList.add("lightmode");
       await delay(1000);
-      console.log("pageTransition();await delay(1000)");
+      console.log("leave");
       done();
     },
 
     async enter(data) {
       contentAnimation();
-
       // AOS.refresh();
       setTimeout(AOS.refreshHard, 150);
-
       console.log("setTimeout(AOS.refreshHard, 150);");
-
       $(document).ready(function () {
         $(".popup-youtube").magnificPopup({
           disableOn: 700,
@@ -118,18 +113,20 @@ barba.init({
 
     async once(data) {
       contentAnimation();
-      // AOS.refresh();
-      // setTimeout(AOS.refreshHard, 1500);
-      console.log("setTimeout(AOS.refreshHard, 1500);");
+      console.log("once");
     },
+
+
     async after(data) {
       var nav = document.querySelector("nav");
       window.onscroll = () => {
         if (window.pageYOffset > 0) nav.classList.add("scroll");
         else nav.classList.remove("scroll");
         console.log("onscroll");
-
       }
+
+      var indexHeader = document.querySelector(".index-page");
+      indexHeader.className += " loaded";
     }
   }, ],
 });
