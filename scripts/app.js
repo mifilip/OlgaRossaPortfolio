@@ -34,8 +34,6 @@ function onScrollHeader() {
   }
 }
 
-onScrollHeader();
-
 // check document is ready
 var domReady = function (callback) {
   document.readyState === "interactive" || document.readyState === "complete" ?
@@ -116,8 +114,8 @@ barba.init({
           preloader: false,
 
           fixedContentPos: false,
-          console.log("popup1");
         });
+        console.log("popup1");
       });
 
     },
