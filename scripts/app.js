@@ -130,7 +130,7 @@ barba.init({
       }
       // AOS.refresh();
       // setTimeout(AOS.refreshHard, 1500);
-      // console.log("setTimeout(AOS.refreshHard, 1500);");
+      console.log("setTimeout(AOS.refreshHard, 1500);");
     },
     async after(data) {
       window.onscroll = () => {
