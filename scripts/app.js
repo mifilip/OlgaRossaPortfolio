@@ -131,8 +131,11 @@ barba.init({
       // AOS.refresh();
       setTimeout(AOS.refreshHard, 150);
       console.log("setTimeout(AOS.refreshHard, 150);");
-
-      onScrollHeader();
+      window.onscroll = () => {
+        if (window.pageYOffset > 0) nav.classList.add("scroll");
+        else nav.classList.remove("scroll");
+        console.log("onscroll")
+      }
 
     },
 
