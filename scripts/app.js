@@ -98,12 +98,8 @@ barba.init({
 
       // AOS.refresh();
       setTimeout(AOS.refreshHard, 150);
+
       console.log("setTimeout(AOS.refreshHard, 150);");
-      window.onscroll = () => {
-        if (window.pageYOffset > 0) nav.classList.add("scroll");
-        else nav.classList.remove("scroll");
-        console.log("onscroll");
-      }
 
       $(document).ready(function () {
         $(".popup-youtube").magnificPopup({
@@ -122,29 +118,25 @@ barba.init({
 
     async once(data) {
       contentAnimation();
-
-      window.onscroll = () => {
-        if (window.pageYOffset > 0) nav.classList.add("scroll");
-        else nav.classList.remove("scroll");
-        console.log("onscroll3");
-      }
       // AOS.refresh();
       // setTimeout(AOS.refreshHard, 1500);
       console.log("setTimeout(AOS.refreshHard, 1500);");
     },
     async after(data) {
+      var nav = document.querySelector("nav");
       window.onscroll = () => {
         if (window.pageYOffset > 0) nav.classList.add("scroll");
         else nav.classList.remove("scroll");
-        console.log("onscroll2");
+        console.log("onscroll");
+
       }
     }
   }, ],
 });
 
 //Header on the index page animates in with the delay from CSS
-const indexHeader = document.querySelector(".index-page");
 
+var indexHeader = document.querySelector(".index-page");
 window.onload = () => {
   contentAnimation();
   indexHeader.className += " loaded";
