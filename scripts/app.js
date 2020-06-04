@@ -26,10 +26,15 @@ burger.addEventListener("click", () => {
 
 const navElements = nav.children;
 //Zmiana koloru na scroll
-window.onscroll = () => {
-  if (window.pageYOffset > 0) nav.classList.add("scroll");
-  else nav.classList.remove("scroll");
-};
+function onScrollHeader() {
+  window.onscroll = () => {
+    if (window.pageYOffset > 0) nav.classList.add("scroll");
+    else nav.classList.remove("scroll");
+    console.log("onscroll")
+  }
+}
+
+onScrollHeader();
 
 // check document is ready
 var domReady = function (callback) {
@@ -127,13 +132,16 @@ barba.init({
       setTimeout(AOS.refreshHard, 150);
       console.log("setTimeout(AOS.refreshHard, 150);");
 
+      onScrollHeader();
+
     },
 
     async once(data) {
       contentAnimation();
+
       // AOS.refresh();
-      setTimeout(AOS.refreshHard, 1500);
-      console.log("setTimeout(AOS.refreshHard, 1500);");
+      // setTimeout(AOS.refreshHard, 1500);
+      // console.log("setTimeout(AOS.refreshHard, 1500);");
     },
   }, ],
 });
@@ -145,8 +153,6 @@ window.onload = () => {
   contentAnimation();
   indexHeader.className += " loaded";
 };
-
-window.addEventListener('load', AOS.refresh);
 
 // const showProjects = document.body.getElementById("showprojects");
 // showProjects.addEventListener("click");

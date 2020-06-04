@@ -525,6 +525,15 @@ section {
   background-color: var(--black);
 }
 
+article.gallery {
+  padding: 12rem 0;
+}
+
+.gallery-item-medium {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
 .home-images figure:nth-child(1) {
   grid-column: 1/6;
   grid-row: 1/3;
@@ -662,6 +671,17 @@ span.getin h2:nth-of-type(2) {
 .portfolio .categories h5:hover::after {
   transition: 0.5s all var(--easeOut);
   top: 120%;
+}
+
+.details i {
+  font-size: 3rem;
+  padding: 2rem;
+
+}
+
+
+span.blockreveal.social-links {
+  padding: 4rem 8rem 0rem 8rem;
 }
 
 @media only screen and (max-width: 599px) {
