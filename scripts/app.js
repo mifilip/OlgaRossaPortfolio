@@ -125,8 +125,8 @@ barba.init({
         console.log("onscroll");
       }
 
-      var indexHeader = document.querySelector(".index-page");
-      indexHeader.className += " loaded";
+      // var indexHeader = document.getElementsByClassName("index-page");
+      // indexHeader.className += " loaded";
     }
   }, ],
 });
