@@ -156,3 +156,16 @@ window.onload = () => {
 
 // const showProjects = document.body.getElementById("showprojects");
 // showProjects.addEventListener("click");
+
+
+$(document).ready(function () {
+  $(".popup-youtube").magnificPopup({
+    disableOn: 700,
+    type: "iframe",
+    mainClass: "mfp-fade",
+    removalDelay: 160,
+    preloader: false,
+
+    fixedContentPos: false,
+  });
+});
