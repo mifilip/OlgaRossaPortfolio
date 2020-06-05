@@ -676,8 +676,21 @@ span.getin h2:nth-of-type(2) {
   margin: 2rem 0rem 0rem 8rem;
 }
 
-.get-in-touch .details h3:after,
+/* .get-in-touch .details h3:after,
 .portfolio .categories h5:after {
+  cursor: pointer;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 98%;
+  height: 0.3rem;
+  background: var(--accent);
+  content: "";
+  transform: translateY(0.5rem);
+  transition: 0.5s all var(--easeOut);
+} */
+.get-in-touch .details a:after,
+.portfolio .categories a:after {
   cursor: pointer;
   position: absolute;
   top: 100%;
@@ -711,7 +724,6 @@ span.blockreveal.social-links {
     grid-column: unset !important;
     grid-row: unset !important;
   }
-
 
   /* !!!!!!!!!!!!!!!!!!!!!!!!!
 body.prevent-scroll {
@@ -757,17 +769,16 @@ body.prevent-scroll {
 
   .menu {
     position: fixed;
-    top: 0;
-    transition: all 1s var(--easeOut);
     display: block;
-    width: 100vw;
     text-align: center;
+    top: 0;
+    width: 100vw;
     z-index: -3;
     height: 100vh;
-    transition: all 1s var(--easeOut);
-    opacity: 0;
-    pointer-events: none;
     background: var(--white);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 1s var(--easeOut);
   }
 
   .menu-open {
@@ -775,11 +786,45 @@ body.prevent-scroll {
     pointer-events: auto;
   }
 
+  ul.menu a {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
   menu a.a-active {
     transition: opacity 1s var(--easeOut);
     margin-top: 15vh;
     opacity: 1 !important;
   }
+
+  ul.menu a.a-active {
+    animation: menu-items-appear forwards .5s;
+  }
+
+  ul.menu .a-active:nth-of-type(1) {
+    animation-delay: 0.1s;
+  }
+
+  ul.menu .a-active:nth-of-type(2) {
+    animation-delay: 0.2s;
+  }
+
+  ul.menu .a-active:nth-of-type(3) {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes menu-items-appear {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
 
   nav> :nth-child(3),
   #hamburger {
