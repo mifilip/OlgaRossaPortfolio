@@ -453,7 +453,7 @@ main.hero.portfolio .categories {
 }
 
 .projects figure:nth-of-type(5) {
-  grid-row: 5.;
+  grid-row: 5;
   grid-column: 1/8;
 }
 
