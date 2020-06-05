@@ -26,13 +26,13 @@ burger.addEventListener("click", () => {
 
 const navElements = nav.children;
 //Zmiana koloru na scroll
-function onScrollHeader() {
-  window.onscroll = () => {
-    if (window.pageYOffset > 0) nav.classList.add("scroll");
-    else nav.classList.remove("scroll");
-    console.log("onscroll")
-  }
-}
+window.onscroll = () => {
+  if (window.pageYOffset > 0) nav.classList.add("scroll");
+  else nav.classList.remove("scroll");
+  console.log("onscroll");
+};
+
+onscroll();
 
 // check document is ready
 var domReady = function (callback) {
