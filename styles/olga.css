@@ -1062,20 +1062,34 @@ html {
   grid-auto-flow: dense;
   grid-auto-rows: 400px;
 } */
+/* 
 
+insta
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25vmax, 1fr));
   grid-gap: 4rem;
   grid-auto-flow: dense;
   grid-auto-rows: 50vmin;
+} */
+
+/* portrety */
+.gallery {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20vmax, 1fr));
+  grid-gap: 4rem;
+  grid-auto-flow: dense;
+  grid-auto-rows: 40vmin;
+
 }
 
-/* @media only screen and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
     .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(30vmin, 1fr)) !important;
+        grid-auto-rows: auto !important;
     }
-} */
+}
 
 .gallery-image {
   /*! position: relative; */
