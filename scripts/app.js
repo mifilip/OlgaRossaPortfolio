@@ -145,7 +145,7 @@ window.onload = () => {
 
 
 $(document).ready(function () {
-  $(".popup-youtube").magnificPopup({
+  $(".popup-vimeo").magnificPopup({
     disableOn: 700,
     type: "iframe",
     mainClass: "mfp-fade",
@@ -156,6 +156,23 @@ $(document).ready(function () {
   });
 });
 
+jQuery('.popup-vimeo').magnificPopup({
+  type: 'iframe',
+  mainClass: 'mfp-fade',
+  removalDelay: 160,
+  preloader: false,
+  fixedContentPos: true,
+  callbacks: {
+      open: function() {
+        var iframe = jQuery('.mfp-content iframe');
+          var player = new Vimeo.Player(iframe);
+       
+          player.on('ended', function() {
+              jQuery.magnificPopup.close();
+          });
+      }
+  }
+});
 
 (function () {
 
