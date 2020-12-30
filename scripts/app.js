@@ -16,7 +16,7 @@ hamburgerBtn.addEventListener("click", function () {
 });
 
 burger.addEventListener("click", () => {
-  nav.classList.toggle("nav-open");
+  nav.classList.toggle("nav-open lightmode");
   burger.classList.toggle("toggle");
   menu.classList.toggle("menu-open");
   links.forEach((element) => {

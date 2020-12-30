@@ -745,6 +745,8 @@ body.prevent-scroll {
 
   .nav-open * {
     transition: all 1s var(--easeOut);
+    background-color: var(--white);
+    color: var(--black);
   }
 
   .menu a {
