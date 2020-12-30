@@ -9,7 +9,7 @@ const navBtns = document.querySelectorAll(".nav-btn");
 const nav = document.querySelector("nav");
 const burger = document.querySelector("#hamburger");
 const links = nav.querySelectorAll("a");
-const menu = nav.querySelector(".menu");
+const menu = nav.querySelctor(".menu");
 
 hamburgerBtn.addEventListener("click", function () {
   hamburgerBtn.classList.toggle("is-active");
