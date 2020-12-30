@@ -676,19 +676,20 @@ span.getin h2:nth-of-type(2) {
   margin: 2rem 0rem 0rem 8rem;
 }
 
-.get-in-touch .details h3:after,
-.portfolio .categories h5:after {
+.get-in-touch .details h3::after, .portfolio .categories h5::after {
+
   cursor: pointer;
   position: absolute;
   top: 100%;
   left: 0;
-  width: 98%;
+  width: calc(100% - 1rem);
   height: 0.3rem;
   background: var(--accent);
   content: "";
   transform: translateY(0.5rem);
   transition: 0.5s all var(--easeOut);
 }
+
 /* .get-in-touch .details a:after,
 .portfolio .categories a:after {
   cursor: pointer;
