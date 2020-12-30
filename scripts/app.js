@@ -9,7 +9,7 @@ const navBtns = document.querySelectorAll(".nav-btn");
 const nav = document.querySelector("nav");
 const burger = document.querySelector("#hamburger");
 const links = nav.querySelectorAll("a");
-const menu = nav.querySelctor(".menu");
+const menu = nav.querySelector(".menu");
 
 hamburgerBtn.addEventListener("click", function () {
   hamburgerBtn.classList.toggle("is-active");
@@ -34,50 +34,50 @@ window.onscroll = () => {
 
 onscroll();
 
-// // check document is ready
-// var domReady = function (callback) {
-//   document.readyState === "interactive" || document.readyState === "complete" ?
-//     callback() :
-//     document.addEventListener("DOMContentLoaded", callback);
-// };
+// check document is ready
+var domReady = function (callback) {
+  document.readyState === "interactive" || document.readyState === "complete" ?
+    callback() :
+    document.addEventListener("DOMContentLoaded", callback);
+};
 
 
-// function delay(n) {
-//   n = n || 2000;
-//   return new Promise((done) => {
-//     setTimeout(() => {
-//       done();
-//     }, n);
-//   });
-// }
+function delay(n) {
+  n = n || 2000;
+  return new Promise((done) => {
+    setTimeout(() => {
+      done();
+    }, n);
+  });
+}
 
-// function pageTransition() {
-//   var tl = gsap.timeline();
-//   tl.to(".loading-screen", {
-//     duration: 1.2,
-//     bottom: "0%",
-//     ease: "Expo.easeInOut",
-//   });
+function pageTransition() {
+  var tl = gsap.timeline();
+  tl.to(".loading-screen", {
+    duration: 1.2,
+    bottom: "0%",
+    ease: "Expo.easeInOut",
+  });
 
-//   tl.to(".loading-screen", {
-//     duration: 1,
-//     height: "0%",
-//     ease: "Expo.easeInOut",
-//     delay: 0.3,
-//   });
-//   tl.set(".loading-screen", {
-//     bottom: "-100%",
-//     height: "100%"
-//   });
-// }
+  tl.to(".loading-screen", {
+    duration: 1,
+    height: "0%",
+    ease: "Expo.easeInOut",
+    delay: 0.3,
+  });
+  tl.set(".loading-screen", {
+    bottom: "-100%",
+    height: "100%"
+  });
+}
 
-// function contentAnimation() {
-//   var tl = gsap.timeline();
-//   tl.from("h1", {
-//     duration: 1,
-//     opacity: 1,
-//   });
-// }
+function contentAnimation() {
+  var tl = gsap.timeline();
+  tl.from("h1", {
+    duration: 1,
+    opacity: 1,
+  });
+}
 
 // barba.init({
 //   sync: true,
@@ -132,7 +132,7 @@ onscroll();
 //   }, ],
 // });
 
-// //Header on the index page animates in with the delay from CSS
+//Header on the index page animates in with the delay from CSS
 
 // var indexHeader = document.querySelector(".index-page");
 // window.onload = () => {
