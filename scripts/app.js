@@ -34,111 +34,111 @@ window.onscroll = () => {
 
 onscroll();
 
-// check document is ready
-var domReady = function (callback) {
-  document.readyState === "interactive" || document.readyState === "complete" ?
-    callback() :
-    document.addEventListener("DOMContentLoaded", callback);
-};
+// // check document is ready
+// var domReady = function (callback) {
+//   document.readyState === "interactive" || document.readyState === "complete" ?
+//     callback() :
+//     document.addEventListener("DOMContentLoaded", callback);
+// };
 
 
-function delay(n) {
-  n = n || 2000;
-  return new Promise((done) => {
-    setTimeout(() => {
-      done();
-    }, n);
-  });
-}
+// function delay(n) {
+//   n = n || 2000;
+//   return new Promise((done) => {
+//     setTimeout(() => {
+//       done();
+//     }, n);
+//   });
+// }
 
-function pageTransition() {
-  var tl = gsap.timeline();
-  tl.to(".loading-screen", {
-    duration: 1.2,
-    bottom: "0%",
-    ease: "Expo.easeInOut",
-  });
+// function pageTransition() {
+//   var tl = gsap.timeline();
+//   tl.to(".loading-screen", {
+//     duration: 1.2,
+//     bottom: "0%",
+//     ease: "Expo.easeInOut",
+//   });
 
-  tl.to(".loading-screen", {
-    duration: 1,
-    height: "0%",
-    ease: "Expo.easeInOut",
-    delay: 0.3,
-  });
-  tl.set(".loading-screen", {
-    bottom: "-100%",
-    height: "100%"
-  });
-}
+//   tl.to(".loading-screen", {
+//     duration: 1,
+//     height: "0%",
+//     ease: "Expo.easeInOut",
+//     delay: 0.3,
+//   });
+//   tl.set(".loading-screen", {
+//     bottom: "-100%",
+//     height: "100%"
+//   });
+// }
 
-function contentAnimation() {
-  var tl = gsap.timeline();
-  tl.from("h1", {
-    duration: 1,
-    opacity: 1,
-  });
-}
+// function contentAnimation() {
+//   var tl = gsap.timeline();
+//   tl.from("h1", {
+//     duration: 1,
+//     opacity: 1,
+//   });
+// }
 
-barba.init({
-  sync: true,
+// barba.init({
+//   sync: true,
 
-  transitions: [{
-    async leave(data) {
-      const done = this.async();
-      pageTransition();
-      await delay(1000);
-      console.log("leave");
-      done();
-    },
+//   transitions: [{
+//     async leave(data) {
+//       const done = this.async();
+//       pageTransition();
+//       await delay(1000);
+//       console.log("leave");
+//       done();
+//     },
 
-    async enter(data) {
-      contentAnimation();
-      // AOS.refresh();
-      setTimeout(AOS.refreshHard, 150);
-      console.log("setTimeout(AOS.refreshHard, 150);");
-      $(document).ready(function () {
-        $(".popup-youtube").magnificPopup({
-          disableOn: 700,
-          type: "iframe",
-          mainClass: "mfp-fade",
-          removalDelay: 160,
-          preloader: false,
+//     async enter(data) {
+//       contentAnimation();
+//       // AOS.refresh();
+//       setTimeout(AOS.refreshHard, 150);
+//       console.log("setTimeout(AOS.refreshHard, 150);");
+//       $(document).ready(function () {
+//         $(".popup-youtube").magnificPopup({
+//           disableOn: 700,
+//           type: "iframe",
+//           mainClass: "mfp-fade",
+//           removalDelay: 160,
+//           preloader: false,
 
-          fixedContentPos: false,
-        });
-        console.log("popup1");
-      });
+//           fixedContentPos: false,
+//         });
+//         console.log("popup1");
+//       });
 
-    },
+//     },
 
-    async once(data) {
-      contentAnimation();
-      console.log("once");
-    },
+//     async once(data) {
+//       contentAnimation();
+//       console.log("once");
+//     },
 
 
-    async after(data) {
-      var nav = document.querySelector("nav");
-      window.onscroll = () => {
-        if (window.pageYOffset > 0) nav.classList.add("scroll");
-        else nav.classList.remove("scroll");
-        console.log("onscroll");
-      }
+//     async after(data) {
+//       var nav = document.querySelector("nav");
+//       window.onscroll = () => {
+//         if (window.pageYOffset > 0) nav.classList.add("scroll");
+//         else nav.classList.remove("scroll");
+//         console.log("onscroll");
+//       }
 
-      var indexHeader = document.querySelector(".index-page");
-      if (indexHeader == null) console.log("null");
-      else indexHeader.className += " loaded";
-    }
-  }, ],
-});
+//       var indexHeader = document.querySelector(".index-page");
+//       if (indexHeader == null) console.log("null");
+//       else indexHeader.className += " loaded";
+//     }
+//   }, ],
+// });
 
-//Header on the index page animates in with the delay from CSS
+// //Header on the index page animates in with the delay from CSS
 
-var indexHeader = document.querySelector(".index-page");
-window.onload = () => {
-  contentAnimation();
-  indexHeader.className += " loaded";
-};
+// var indexHeader = document.querySelector(".index-page");
+// window.onload = () => {
+//   contentAnimation();
+//   indexHeader.className += " loaded";
+// };
 
 // const showProjects = document.body.getElementById("showprojects");
 // showProjects.addEventListener("click");
