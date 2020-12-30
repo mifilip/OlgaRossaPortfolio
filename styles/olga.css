@@ -721,10 +721,6 @@ span.blockreveal.social-links {
 }
 
 @media only screen and (max-width: 599px) {
-  * {
-    grid-column: unset !important;
-    grid-row: unset !important;
-  }
 
   /* !!!!!!!!!!!!!!!!!!!!!!!!!
 body.prevent-scroll {
@@ -1085,6 +1081,10 @@ insta
 }
 
 @media only screen and (max-width: 599px) {
+  * {
+    grid-column: unset !important;
+    grid-row: unset !important;
+  }
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(30vmin, 1fr)) !important;
         grid-auto-rows: auto !important;
