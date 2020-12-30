@@ -1077,9 +1077,9 @@ insta
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20vmax, 1fr));
   grid-gap: 4rem;
-  grid-auto-flow: dense;
-  grid-auto-rows: 40vmin;
-
+  grid-auto-flow: auto;
+  /* grid-auto-rows: 40vmin; */
+  grid-auto-rows: auto;
 }
 
 @media only screen and (max-width: 599px) {
